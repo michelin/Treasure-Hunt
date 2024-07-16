@@ -26,6 +26,7 @@ Par exemple un flag pourrait être : `1_tH15-15-N0t-TH3-B3g1NN1ng.html`
 
 ### Easy way to deploy
 
+(Non fonctionnel pour le moment)
 Clickez sur le bouton : [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FR4ph3uz%2FMichelin-Jeu-de-Piste&project-name=jeu-de-piste&build-command=python%20static-generator.py&output-directory=.%2Fbuild)
 
 ### Local Deploy :
@@ -96,6 +97,6 @@ Le fichier html contiendra {{flag}} si il y a un challenge qui le suit sinon con
 
 ## Support
 
-Si vous avez des questions ou des problèmes, n'hésitez pas à contacter notre équipe à l'adresse suivante : jeu-de-piste-devoxx@michelin.com
+Si vous avez des questions ou des problèmes, n'hésitez pas à contacter notre équipe à l'adresse suivante : treasure-hunt@michelin.com
 
 Bonne chance et amusez-vous bien !
