@@ -1,0 +1,76 @@
+name: Deploy test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+  generate_solution_file:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run genere_solution_file.py
+        run: python ./genere_solution_file.py
+
+      - name: Upload solution.md as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: solution-md
+          path: solution.md
+
+  static_generator:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run static-generator.py
+        run: python ./static-generator.py
+
+      - name: Upload build folder as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-folder
+          path: build
+
+  deploy:
+    needs: [setup, static_generator]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Download build folder artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-folder
+          path: build
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          cd  build
+          npm install -g vercel
+          vercel --prod --yes --token $VERCEL_TOKEN
