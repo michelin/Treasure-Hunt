@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF/Jeu de piste Michelin</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    <!-- Favicon is in static and is automatically copied to be accessible everywhere  -->
+    <link rel="icon" href="{{ url_for('static', path='/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <section class="header">
+        <h1 class="gradient">Jeu de piste</h1>
+        <div><img src="{{ url_for('static', path='/image_static.png') }}" alt="image" /></div><!--  -->
+    </section>
+    <section class="description">
+        <div>
+            <h2 class="gradient">Fonctionnement</h2>
+            <p>
+                Le jeu de piste est composé de plusieurs énigmes. Pour chaque énigme, vous devez trouver un mot de passe qui vous permettra de passer à l'énigme suivante.
+                Les flag sont de la forme X_S0me-str1nG.html 
+            </p>
+            <p>
+                <br>
+                ps: ceci est deja un challenge
+            </p>
+        </div>
+    </section>
+</body>
+</html>

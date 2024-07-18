@@ -1,0 +1,6 @@
+title: "A thousand problem"
+description: "Can you count to that ?"
+hint: "change data-number to 999 and click on the button or chec the script"
+template: "th0usand.html"
+css: "./static/th0usand-style.css"
+javascript: "./static/th0usand-script.js"

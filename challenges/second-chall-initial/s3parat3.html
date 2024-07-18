@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Choose your Path</title>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', path='/s3parat3-style.css') }}">
+
+<link rel="icon" href="{{ url_for('static', path='/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+ </header>
+ 
+ <h1>Choose ur path</h1>
+
+ <div class="frame">
+  {% for path in PATH["PATHS"] %}
+   <button class="custom-btn btn-{{1+(loop.index %10)}}"><a href="/{{path}}/{{first_path_chall[loop.index-1]}}">{{path}}</a></button>
+   {% endfor %}
+ </div>
+ 
+  <script  src="{{ url_for('static', path='/s3parat3-script.js') }}"></script>
+
+</body>
+</html>

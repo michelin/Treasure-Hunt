@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chasse au trésor</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/th0usand-style.css') }}" media="screen">
+    <link rel="icon" href="{{ url_for('static', path='/favicon.ico') }}" type="image/x-icon">
+
+
+</head>
+<body>
+    <div id="channel">
+        <h1>Chasse au trésor</h1>
+        <p>Trouvez le drapeau pour gagner!</p>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment Button</title>
+    <script src="{{ url_for('static', path='/th0usand-script.js') }}"></script>
+    <script>
+        function incrementNumber() {
+            // Sélectionner le bouton
+            const button = document.getElementById('incrementButton');
+            // Récupérer la valeur de l'attribut data-number
+            let number = parseInt(button.getAttribute('data-number'));
+            // Incrémenter la valeur
+            number += 1;
+            if (number === 1000) {
+                alert('Flag{GG YOU WON}');
+            }
+            // Mettre à jour l'attribut data-number avec la nouvelle valeur
+            button.setAttribute('data-number', number);
+            // Afficher la nouvelle valeur sur le bouton
+            button.innerText = `Number: ${number}`;
+        }
+    </script>
+</head>
+<body>
+    <!-- Bouton avec l'attribut data-number initialisé à 0 -->
+    <button id="incrementButton" data-number="0" onclick="incrementNumber()">Number: 0</button>
+</body>
+</html>
+
+        <p id="flagMessage"></p>
+    </div>
+
+    <script>
+        // Code JavaScript pour trouver le drapeau
+        var flagButton = document.getElementById("flagButton");
+        var flagMessage = document.getElementById("flagMessage");
+
+        flagButton.addEventListener("click", function() {
+            flagMessage.textContent = "Félicitations! Vous avez trouvé le drapeau!";
+        });
+    </script>
+    <script>
+        // Code JavaScript pour trouver le Flag
+        var flagMsg = document.getElementById("flagmsg");
+        var flagBtn = document.getElementById("Flag");
+
+        flagBtn.addEventListener("click", function() {
+            flagMsg.textContent = "GG you found the flag";
+        });
+    </script>
+</body>
+</html>

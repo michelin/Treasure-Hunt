@@ -1,0 +1,7 @@
+title: "Je ne suis pas LA POSTE "
+description: "from get to post"
+hint: "use POST request to get the flag"
+template: "p0ste.html"
+css: "./static/p0ste-style.css"
+javascript: "./static/p0ste-script.js"
+api: "./api.py"

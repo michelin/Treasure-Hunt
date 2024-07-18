@@ -1,0 +1,8 @@
+title: "CTF Michelin"
+description: "Premiere page chez michelin"
+hint: "check the CSS"
+template: "index.html"
+css: "./static/style.css"
+javascript: "./static/script.js"
+static_files:
+  - "./static/image_static.png"
