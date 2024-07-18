@@ -1,0 +1,9 @@
+INITIAL:
+  - ./challenges/first-chall-initial/config.yml
+  - ./challenges/second-chall-initial/config.yml
+PATHS:
+  path1:
+    - ./challenges/first-chall-first-path/config.yml
+    - ./challenges/second-chall-first-path/config.yml
+  path2:
+    - ./challenges/first-chall-second-path/config.yml

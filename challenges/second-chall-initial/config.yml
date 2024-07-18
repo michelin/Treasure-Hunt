@@ -1,0 +1,6 @@
+title: "Choisis ta voie"
+description: "Fromage ou dessert ?"
+hint: "Clic on the chosen track (you might inspect the link and use the href)"
+template: "s3parat3.html"
+css: "./static/s3parat3-style.css"
+javascript: "./static/s3parat3-script.js"

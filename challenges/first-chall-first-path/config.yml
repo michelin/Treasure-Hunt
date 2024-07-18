@@ -1,0 +1,9 @@
+title: "Can you write it ?"
+description: "you see the flag but you cant copy/paste it"
+hint: "write it down"
+template: "image.html"
+css: "./static/image-style.css"
+javascript: "./static/image-script.js"
+encoding_script: "encoder.sh"
+static_files:
+  - "./static/image.png"
