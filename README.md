@@ -1,33 +1,33 @@
-# Repository Jeu de Piste 
+# Repository Treasure-Hunt
 
 
 ## Introduction
 
-Bienvenue sur le repository du jeu de piste en ligne Michelin !
+Welcome to the Michelin online treasure hunt repository!
 
-Ce jeu consiste à naviguer à travers plusieurs pages, chacune contenant un défi. En réussissant chaque défi, vous obtiendrez un flag. Collectez tous les flags pour terminer le jeu !
+This game consists of navigating through several pages, each containing a challenge. As you complete each challenge, you'll be awarded a flag. Collect all the flags to complete the game!
 
 ## How to play
 
-1. **Commencez le jeu** : Rendez-vous sur la première page du jeu ([Voir déployment](https://github.com/michelin/treasure-hunt?tab=readme-ov-file#Deployment)).
-2. **Résolvez le défi** : Chaque page contiendra un défi unique que vous devrez résoudre pour obtenir un flag.
-3. **Obtenez le flag** : Une fois le défi résolu, un flag vous sera fourni. Notez-le bien !
-4. **Continuez l'aventure** : Utilisez le flag pour accéder à la page suivante où un nouveau défi vous attend.
-5. **Terminez le jeu** : Répétez le processus jusqu'à ce que vous ayez collecté tous les flags et atteint la fin du jeu.
+1. **Start the game**: Go to the first page of the game ([See Deployment](https://github.com/michelin/treasure-hunt?tab=readme-ov-file#Deployment)).
+2. **Solve the challenge**: Each page will contain a unique challenge that you must solve to obtain a flag.
+3. **Get the flag**: Once you have solved the challenge, you will be provided with a flag. Make a note of it!
+4. **Continue the adventure**: Use the flag to access the next page where a new challenge awaits you.
+5. **End the game**: Repeat the process until you have collected all the flags and reached the end of the game.
 
-Les flags sont de la forme `X_S0M3-Str1NgS.html` où X est le numéro du challenge.
-Par exemple un flag pourrait être : `1_tH15-15-N0t-TH3-B3g1NN1ng.html`
+
+Flags are of the form `X_S0M3-Str1NgS.html` where X is the challenge number.
+For example, a flag could be `1_tH15-15-N0t-TH3-B3g1NN1ng.html`.
 
 ## Deployment
 
 ### Requirement
 
-- Avoir un compte Vercel. Si vous n'en avez pas, inscrivez-vous sur [vercel.com](vercel.com)
+- Have a Vercel account. If you don't have one, register at [vercel.com](vercel.com)
 
 ### Easy way to deploy
 
-(Non fonctionnel pour le moment)
-Clickez sur le bouton : [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FR4ph3uz%2FMichelin-Jeu-de-Piste&project-name=jeu-de-piste&build-command=python%20static-generator.py&output-directory=.%2Fbuild)
+Click on the button : [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FR4ph3uz%2FMichelin-Jeu-de-Piste&project-name=jeu-de-piste&build-command=python%20static-generator.py&output-directory=.%2Fbuild)
 
 ### Local Deploy :
 
@@ -39,28 +39,28 @@ execute: `python ./static-generator.py && cd build && python ./main.py`
 
 ### Deploy in other way :
 
-- Créez un token Vercel et mettez le dans les secrets du repo sous le nom `VERCEL_TOKEN`
+- Create a Vercel token and put it in the repo secrets under the name `VERCEL_TOKEN`.
 
 <details>
-<summary> Detail de la création de Token </summary>
+<summary> Token creation details </summary>
 
-Dans les détails de votre compte : 
+In your account details : 
 
-![Account settings](./images_readme/Account.PNG "Account")
+![Account settings](./images_readme/Account.PNG ‘Account’)
   
-allez dans token :
+go to token :
 
-![Tokens section](./images_readme/Token.PNG "Token")
+![Tokens section](./images_readme/Token.PNG ‘Token’)
 
-puis créez un token (choisissez le scope et la durée)
+then create a token (choose the scope and duration)
 
-![Token Creation](./images_readme/Creation.PNG "Création du token")
+![Token Creation](./images_readme/Creation.PNG ‘Token Creation’)
 
-Copiez le token et mettez le dans Settings puis Secret Action
+Copy the token and put it in Settings then Secret Action
 
-![Section Action](./images_readme/Actions.PNG "Bouton secret d'action")
+![Section Action](./images_readme/Actions.PNG ‘Secret action button’)
 
-Créez un nouveau secret :
+Create a new secret :
 
 ![Token created](./images_readme/Secret.PNG "Token Vercel")
 
@@ -68,35 +68,35 @@ Créez un nouveau secret :
 
 ### Step to deploy on vercel
 
-- Après un push (ou commit directement sur github) un github action se lance.
-- Vous pouvez retourner sur vercel récupérer un url qui mènera au challenge
+- After a push (or commit directly to github), a github action is launched.
+- You can go back to vercel to get a url that will lead to the challenge
 
 ### Add a scenario 
 
-- Créez un dossier dans le dossier `challenges/` (eg. `fun_chall`)
-- A l'interieur placez le fichier html `Fun-Ch4l1.html`
-- Ajoutez le hichier config.yml qui contiendra
+- Create a folder in the `challenges/` folder (eg. `fun_chall`)
+- Inside, place the html file `Fun-Ch4l1.html`.
+- Add the config.yml file which will contain
   - title: "{titre du challenge}"
   - description: "{description du challenge}"
   - hint: "{solution du challenge}"
-  - template: "Fun-Ch4l1.html" `//nom du fichier html`
-  - css: "./static/Fun-Ch4l1.css" `//meme nom de fichier mais dans ./static `
+  - template: "Fun-Ch4l1.html" `//html file name`
+  - css: "./static/Fun-Ch4l1.css" `//same filename but in ./static `
   - javascript: "./static/Fun-Ch4l1.js"
-  - api: "./api.py" `// si nécéssaire pour récuperer un POST/PUT...`
-  - encoding_script: "./encoder.sh" `// permet d'enoder un flag fourni en $1`
-- Rajoutez vos scripts/feuilles de style CSS dans le dossier `static`
-- Faites références dans vos fichiers HTML à vos scripts JS ou feuilles de style de la manière suivante : 
+  - api: "./api.py" `// if necessary to retrieve a POST/PUT request...`
+  - encoding_script: "./encoder.sh" `// is used to encode a flag given in $1`
+- Add your scripts/stylesheets to the `static` folder
+- Make references in your HTML files to your JS scripts or style sheets as follows: 
 
 ```html
 <link rel="stylesheet" href="{{ url_for('static', path='/Fun-Ch4l1.css') }}">
 ```
 
-- Ajoutez le `./challenges/fun_chall/config.yml` dans un des paths de `paths_config.yml`
+- Add the `./challenges/fun_chall/config.yml` to one of the paths in `paths_config.yml`.
 
-Le fichier html contiendra {{flag}} si il y a un challenge qui le suit sinon contiendra rien/flag final.
+The html file will contain {{flag}} if there is a challenge following it, otherwise it will contain nothing/final flag.
 
 ## Support
 
-Si vous avez des questions ou des problèmes, n'hésitez pas à contacter notre équipe à l'adresse suivante : treasure-hunt@michelin.com
+If you have any questions or problems, don't hesitate to contact our team at treasure-hunt@michelin.com.
 
-Bonne chance et amusez-vous bien !
+Good luck and have fun!
