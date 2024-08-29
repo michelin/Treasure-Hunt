@@ -100,3 +100,9 @@ The html file will contain {{flag}} if there is a challenge following it, otherw
 If you have any questions or problems, don't hesitate to contact our team at treasure-hunt@michelin.com.
 
 Good luck and have fun!
+
+## Fun Fact
+
+We can listen a podcast about this project
+
+![Podcast](./images_readme/podcast.webpg) 
